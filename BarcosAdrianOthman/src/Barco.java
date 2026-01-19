@@ -1,13 +1,12 @@
 
 public class Barco {
 protected String modelo;
-protected int potencia;
+protected Motor motor;
 protected double capacidadCombustible;
-protected double consumoMotor;
-public Barco(String modelo, int potencia, double capacidadCombustible) {
+public Barco(String modelo, Motor motor, double capacidadCombustible) {
 	super();
 	this.modelo = modelo;
-	this.potencia = potencia;
+	this.motor = motor;
 	this.capacidadCombustible = capacidadCombustible;
 }
 public String getModelo() {
@@ -16,11 +15,11 @@ public String getModelo() {
 public void setModelo(String modelo) {
 	this.modelo = modelo;
 }
-public int getPotencia() {
-	return potencia;
+public Motor getMotor() {
+	return motor;
 }
-public void setPotencia(int potencia) {
-	this.potencia = potencia;
+public void setMotor(Motor motor) {
+	this.motor = motor;
 }
 public double getCapacidadCombustible() {
 	return capacidadCombustible;
@@ -30,12 +29,10 @@ public void setCapacidadCombustible(double capacidadCombustible) {
 }
 @Override
 public String toString() {
-	return "Barco [modelo=" + modelo + ", potencia=" + potencia + ", capacidadCombustible=" + capacidadCombustible
-			+ "]";
-}
-int horas;
-public double calcularAutonomia() {
-	return capacidadCombustible/consumoMotor*(horas);
+	return "Barco [modelo=" + modelo + ", motor=" + motor + ", capacidadCombustible=" + capacidadCombustible + "]";
 }
 
+public double calcularAutonomia() {
+    return capacidadCombustible / motor.getConsumo();
+}
 }
