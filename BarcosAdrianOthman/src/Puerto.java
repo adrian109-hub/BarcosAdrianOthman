@@ -37,10 +37,19 @@ public class Puerto {
 	}
 	
 	public double calcularPrecioViaje(Barco b, int horas, double precioCombustible) {
-		if (b instanceof Barco) {
-			
-		} else {
-
+		if (b instanceof Yate) {
+			Yate barc = (Yate) b;
+			if (barc.calcularAutonomia()<horas) {
+				return -1;
+			}
+			return horas*b.getMotor().getConsumo() * precioCombustible;
+		}  else if (b instanceof Catamaran){
+			Catamaran cata = (Catamaran) b;
+			if (cata.calcularAutonomia()<horas) {
+				return -1;
+			}
+			return horas*b.getMotor().getConsumo() * precioCombustible;
 		}
+		return -1;
 	}
 }
