@@ -1,8 +1,8 @@
 public class Yate extends Barco {
 	protected int camarotes;
 
-	public Yate(String modelo, int potencia, double capacidadCombustible, int camarotes) {
-		super(modelo, potencia, capacidadCombustible);
+	public Yate(String modelo, Motor motor, double capacidadCombustible, int camarotes) {
+		super(modelo, motor, capacidadCombustible);
 		this.camarotes = camarotes;
 	}
 
@@ -15,15 +15,17 @@ public class Yate extends Barco {
 	}
 
 	@Override
-	public double calcularAutonomia() {
-		// TODO Auto-generated method stub
-		return super.calcularAutonomia();
+	public String toString() {
+		return "Yate [camarotes=" + camarotes + ", modelo=" + modelo + ", motor=" + motor + ", capacidadCombustible="
+				+ capacidadCombustible + "]";
 	}
 
 	@Override
-	public String toString() {
-		return "Yate [camarotes=" + camarotes + ", modelo=" + modelo + ", potencia=" + potencia
-				+ ", capacidadCombustible=" + capacidadCombustible + ", consumoMotor=" + consumoMotor + ", horas="
-				+ horas + "]";
+	public double calcularAutonomia() {
+		
+		return super.calcularAutonomia();
 	}
-}
+
+	
+	}
+
