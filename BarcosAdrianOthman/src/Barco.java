@@ -3,6 +3,7 @@ public class Barco {
 protected String modelo;
 protected int potencia;
 protected double capacidadCombustible;
+protected double consumoMotor;
 public Barco(String modelo, int potencia, double capacidadCombustible) {
 	super();
 	this.modelo = modelo;
@@ -32,6 +33,9 @@ public String toString() {
 	return "Barco [modelo=" + modelo + ", potencia=" + potencia + ", capacidadCombustible=" + capacidadCombustible
 			+ "]";
 }
-
+int horas;
+public double calcularAutonomia() {
+	return capacidadCombustible/consumoMotor*(horas);
+}
 
 }
